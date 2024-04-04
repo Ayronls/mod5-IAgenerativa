@@ -1,0 +1,36 @@
+Instalação das Bibliotecas:
+Primeiro, certifique-se de ter o Python instalado em seu sistema.
+Em seguida, instale as bibliotecas necessárias executando os seguintes comandos no terminal:
+pip install opencv-python
+pip install pytesseract
+
+Carregando a Imagem:
+Carregue a imagem da qual você deseja extrair o texto usando o OpenCV. Por exemplo:
+Python
+
+import cv2
+
+# Carregue a imagem (substitua 'caminho/para/imagem.jpg' pelo caminho real da imagem)
+image = cv2.imread('caminho/para/imagem.jpg')
+Código gerado por IA. Examine e use com cuidado. Mais informações em perguntas frequentes.
+Configurando o Tesseract:
+O Tesseract é uma ferramenta de reconhecimento óptico de caracteres (OCR). Certifique-se de ter o Tesseract instalado em seu sistema.
+Defina o caminho para o executável do Tesseract no seu código:
+Python
+
+import pytesseract
+
+# Caminho para o executável do Tesseract (ajuste conforme o seu sistema)
+pytesseract.pytesseract.tesseract_cmd = r'C:\caminho\para\tesseract.exe'
+Código gerado por IA. Examine e use com cuidado. Mais informações em perguntas frequentes.
+Extraindo o Texto da Imagem:
+Use a função image_to_string do Tesseract para extrair o texto da imagem:
+Python
+
+texto = pytesseract.image_to_string(image, lang='por')  # 'por' para português
+print(texto)
+Código gerado por IA. Examine e use com cuidado. Mais informações em perguntas frequentes.
+Certifique-se de substituir 'por' pelo idioma correto, caso a imagem contenha texto em outro idioma.
+Resultado:
+Após executar o código, você verá o texto extraído da imagem.
+Lembre-se de que o pré-processamento da imagem pode ser necessário para melhorar a qualidade do reconhecimento. Além disso, ajuste o caminho do executável do Tesseract conforme a sua instalação.
